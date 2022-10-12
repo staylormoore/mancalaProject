@@ -1,1 +1,3 @@
-# Player Subclass
+# Player Superclass
+class Player:
+    
