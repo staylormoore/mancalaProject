@@ -1,4 +1,5 @@
 from player import Player
+from gameboard import Gameboard
 
 
 class Human(Player):
@@ -8,3 +9,4 @@ class Human(Player):
 
     def move(self):
         self.pit = input("Select a pit (1-6):")
+        gameboard.move_seeds(pit)
