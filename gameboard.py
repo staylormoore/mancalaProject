@@ -6,5 +6,6 @@ class Gameboard:
         # last element of p1 = their mancala, first element of p2 = their mancala
         self.p1pits = [4, 4, 4, 4, 4, 4, 0]
         self.p2pits = [0, 4, 4, 4, 4, 4, 4]
-        self.gameboard = [self.p1pits, self.p2pits]
+        self.Gameboard = [self.p1pits, self.p2pits]
+
 
