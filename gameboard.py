@@ -9,3 +9,11 @@ class Gameboard:
         self.Gameboard = [self.p1pits, self.p2pits]
 
 
+
+
+    def move_seeds(self, pit):
+
+
+    def game_over(self):
+
+        if self.p1pits
