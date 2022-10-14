@@ -4,8 +4,8 @@ from gameboard import Gameboard
 
 
 class Game:
-    g1 = Gameboard()  # mancala gameboard
-    p1 = Human()  # player1
-    p2 = Human()  # player2
+    g1 = Gameboard()  # mancala board
+    p1 = Human("Player1")  # player1
+    p2 = Human("Player2")  # player2
 
-    print(g1)
+    print(g1[0])
