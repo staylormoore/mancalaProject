@@ -9,5 +9,5 @@ class Human(Player):
         self.name = n
 
     def move(self):
-        self.pit = input("Select a pit (1-6):")
-        gameboard.move_seeds(pit)
+        pit = input("Select a pit (1-6):")
+        Gameboard.move_seeds(pit)
