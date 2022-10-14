@@ -8,4 +8,4 @@ class Game:
     p1 = Human("Player1")  # player1
     p2 = Human("Player2")  # player2
 
-    print(g1[0])
+    print(g1.__str__())
