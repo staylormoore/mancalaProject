@@ -1,4 +1,4 @@
-# Player Superclasss
+# Player Superclass
 class Player:
 
     def move(self):  # will be overwritten in human subclass for human players
