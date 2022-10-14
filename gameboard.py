@@ -8,11 +8,18 @@ class Gameboard:
         self.p2pits = [0, 4, 4, 4, 4, 4, 4]
         self.board = [self.p1pits, self.p2pits]
 
-    def __str__(self):
-        return self.board
+
+
 
     def move_seeds(self, pit):
+        pass
 
     def game_over(self):
-
-        if self.p1pits
+        over = True
+        for x in self.p1pits[0:6]:
+            if self.p1pits[x] > 0:
+                over = False
+        for x in self.p2pits[-1:-7]:
+            if self.p2pits[x] > 0:
+                over = False
+        return over
