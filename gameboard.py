@@ -8,8 +8,8 @@ class Gameboard:
         self.p2pits = [0, 4, 4, 4, 4, 4, 4]
         self.board = [self.p1pits, self.p2pits]
 
-
-
+    def __str__(self):
+        return self.board
 
     def move_seeds(self, pit):
         pass
