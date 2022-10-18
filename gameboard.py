@@ -19,7 +19,7 @@ class Gameboard:
         return str(self.board)
 
     def move_seeds(self, pit, turn):
-        if turn == 1:
+        if turn:
 
 
 
