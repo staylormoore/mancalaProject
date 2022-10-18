@@ -14,7 +14,7 @@ class Game:
 
 
 def determine_winner():
-    p1seeds = Gameboard.p1pits[0]
+    p1seeds = Gameboard.p1pits[0]  # FIX THIS - use accessor methods?
     p2seeds = Gameboard.p2pits[7]
     if p1seeds > p2seeds:
         print("Player 1 wins!")
