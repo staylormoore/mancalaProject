@@ -13,4 +13,9 @@ class Game:
 
 
 def determine_winner():
-    pass
+    p1seeds = g1.p1pits[0]
+    p2seeds = g1.p2pits[7]
+    if p1seeds > p2seeds:
+        print("Player 1 wins!")
+    else:
+        print("Player 2 wins!")
