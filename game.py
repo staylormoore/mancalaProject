@@ -9,3 +9,4 @@ class Game:
     p2 = Human("Player2")  # player2
 
     print(g1.__str__())
+    print(p1.__str__())
