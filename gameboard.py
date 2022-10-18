@@ -16,10 +16,10 @@ class Gameboard:
 
     def game_over(self):
         over = True
-        for x in self.p1pits[0:6]:
-            if self.p1pits[x] > 0:
+        for x in self.p1pits[0:6]:  # this for loop checks each pit on player1's side for seeds
+            if self.p1pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
                 over = False
-        for x in self.p2pits[-1:-7]:
-            if self.p2pits[x] > 0:
+        for x in self.p2pits[-1:-7]:  # this for loop checks each pit on player2's side for seeds
+            if self.p2pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
                 over = False
         return over
