@@ -10,3 +10,7 @@ class Game:
 
     print(g1.__str__())
     print(p1.__str__())
+
+
+def determine_winner():
+    pass
