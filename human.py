@@ -13,10 +13,5 @@ class Human(Player):
         return str(self.name)
 
     def move(self):
-        turn = Game.whose_turn(self)
-        if turn == True:
-            print("Player 1's turn")
-        else:
-            print("Player 2's turn")
         pit = input("Select a pit (1-6):")
-        Gameboard.move_seeds(pit)
+        return pit
