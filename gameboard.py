@@ -8,6 +8,12 @@ class Gameboard:
         self.p2pits = [4, 4, 4, 4, 4, 4, 0]
         self.board = [self.p1pits, self.p2pits]
 
+    def get_p1pits(self):  # accessor method for p1pits --> enables to be used in other classes
+        return self.p1pits
+
+    def get_p2pits(self):  # accessor method for p2pits --> enables to be used in other classes
+        return self.p2pits
+
     def __str__(self):
         return str(self.board)
 
