@@ -4,18 +4,19 @@ from gameboard import Gameboard
 
 
 class Game:
-    self.g1 = Gameboard()  # mancala board
-    p1 = Human("Player1")  # player1
-    p2 = Human("Player2")  # player2
-    turn = True  # when turn = True, it is p1's turn, when turn = False, it is p2's turn
+    def __init__(self):
+        self.g1 = Gameboard()  # mancala board
+        self.p1 = Human("Player1")  # player1
+        self.p2 = Human("Player2")  # player2
+        self.turn = True  # when turn = True, it is p1's turn, when turn = False, it is p2's turn
 
-    print(g1.__str__())
-    print(p1.__str__())
+    print(self.g1.__str__())
+    print(self.p1.__str__())
 
 
 def determine_winner():
-    p1seeds = self.g1.p1pits[0]  # FIX THIS - use accessor methods?
-    p2seeds = g1.p2pits[7]
+    p1seeds = self.g1.get_p1pits()  # FIX THIS - use accessor methods?
+    p2seeds = self.g1.get_p2pits()
     if p1seeds > p2seeds:
         print("Player 1 wins!")
     else:
