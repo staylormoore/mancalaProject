@@ -1,4 +1,5 @@
 # Gameboard Class
+from game import Game
 class Gameboard:
     def __init__(self):
         # instance variables
@@ -17,8 +18,10 @@ class Gameboard:
     def __str__(self):
         return str(self.board)
 
-    def move_seeds(self, pit):
-        pass
+    def move_seeds(self, pit, turn):
+        if turn == 1:
+
+
 
     def game_over(self):
         over = True

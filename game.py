@@ -13,6 +13,14 @@ class Game:
         print(self.g1.__str__())
         print(self.p1.__str__())
 
+    def whose_turn(self):
+        return self.turn
+    def play(self):
+        play1.moveSeeds( 1 )
+        play2 turn
+        if( fgisfgdgfo)
+    def takeTurn(self) :
+        #do stuff
     def determine_winner(self):
         p1seeds = self.g1.get_p1pits()  # FIX THIS - use accessor methods?
         p2seeds = self.g1.get_p2pits()
