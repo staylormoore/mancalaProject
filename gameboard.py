@@ -15,10 +15,11 @@ class Gameboard:
     def get_p2pits(self):  # accessor method for p2pits --> enables to be used in other classes
         return self.p2pits
 
-    def __str__(self):
+    def __str__(self):  # to-string for the board
         return str(self.board)
 
-    def move_seeds(self, pit, turn):
+    def move_seeds(self, pit, turn):  # method that determines how the seeds are sewn based on the player and
+        # which pit they choose
         if turn:
 
 

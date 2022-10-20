@@ -10,19 +10,24 @@ class Game:
         self.p2 = Human("Player2")  # player2
         self.turn = True  # when turn = True, it is p1's turn, when turn = False, it is p2's turn
 
-        print(self.g1.__str__())
-        print(self.p1.__str__())
+        print(self.g1.__str__())  # testing, can delete later
+        print(self.p1.__str__())  # testing, can delete later
 
-    # Gillespie update
-    def play(self):
-        pit = self.p1.move()
-        self.gb.move_seeds(pit,True)
+
+    def play(self):  # method that the client calls to play the game
+        pit = self.p1.move()  # p1 always starts the game with the first turn, they move first
+        self.gb.move_seeds(pit,True)  # calls gameboard's move_seeds() method
         while not Gameboard.game_over():
+            if self.turn:
+                pit = self.p1.move()
+                self.gb.move_seeds(pit, 1)
+            else:
 
 
 
-    def determine_winner(self):
-        p1seeds = self.gb.get_p1pits()  # FIX THIS - use accessor methods?
+    def determine_winner(self):  # determines which player wins by counting up the seeds in each pit once the
+        # game is over
+        p1seeds = self.gb.get_p1pits()
         p2seeds = self.gb.get_p2pits()
         if p1seeds[0] > p2seeds[6]:
             print("Player 1 wins!")
