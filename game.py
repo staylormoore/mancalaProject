@@ -16,13 +16,14 @@ class Game:
 
     def play(self):  # method that the client calls to play the game
         pit = self.p1.move()  # p1 always starts the game with the first turn, they move first
-        self.gb.move_seeds(pit,True)  # calls gameboard's move_seeds() method
+        self.gb.move_seeds(pit,1)  # calls gameboard's move_seeds() method for p1
         while not Gameboard.game_over():
             if self.turn:
                 pit = self.p1.move()
                 self.gb.move_seeds(pit, 1)
             else:
-
+                pit = self.p2.move()
+                self.gb.move_seeds(pit, 2)
 
 
     def determine_winner(self):  # determines which player wins by counting up the seeds in each pit once the
