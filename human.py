@@ -14,4 +14,5 @@ class Human(Player):
 
     def move(self):
         pit = input("Select a pit (1-6):")
-        return pit
+        return pit-1  # minus one so that the user doesn't have to enter "pit zero"
+
