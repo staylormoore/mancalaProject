@@ -22,7 +22,7 @@ class Gameboard:
         # which pit they choose
         if turn == 1:  # if it is p1's turn
 
-        else:  # if it is p1's turn
+        else:  # if it is p2's turn
 
 
 
