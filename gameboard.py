@@ -20,7 +20,10 @@ class Gameboard:
 
     def move_seeds(self, pit, turn):  # method that determines how the seeds are sewn based on the player and
         # which pit they choose
-        if turn == 1:
+        if turn == 1:  # if it is p1's turn
+
+        else:  # if it is p1's turn
+
 
 
 

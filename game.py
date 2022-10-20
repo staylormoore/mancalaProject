@@ -17,11 +17,11 @@ class Game:
     def play(self):  # method that the client calls to play the game
         pit = self.p1.move()  # p1 always starts the game with the first turn, they move first
         self.gb.move_seeds(pit,1)  # calls gameboard's move_seeds() method for p1
-        while not Gameboard.game_over():
-            if self.turn:
+        while not Gameboard.game_over():  # while the game is still going
+            if self.turn:  # p1 move
                 pit = self.p1.move()
                 self.gb.move_seeds(pit, 1)
-            else:
+            else:  # p2 move
                 pit = self.p2.move()
                 self.gb.move_seeds(pit, 2)
 
