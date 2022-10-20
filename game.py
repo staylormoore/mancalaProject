@@ -13,7 +13,6 @@ class Game:
         print(self.g1.__str__())  # testing, can delete later
         print(self.p1.__str__())  # testing, can delete later
 
-
     def play(self):  # method that the client calls to play the game
         pit = self.p1.move()  # p1 always starts the game with the first turn, they move first
         self.gb.move_seeds(pit,1)  # calls gameboard's move_seeds() method for p1
@@ -25,12 +24,11 @@ class Game:
                 pit = self.p2.move()
                 self.gb.move_seeds(pit, 2)
 
-
     def determine_winner(self):  # determines which player wins by counting up the seeds in each pit once the
         # game is over
         p1seeds = self.gb.get_p1pits()
         p2seeds = self.gb.get_p2pits()
-        if p1seeds[0] > p2seeds[6]:
+        if p1seeds[6] > p2seeds[0]:
             print("Player 1 wins!")
         else:
             print("Player 2 wins!")
