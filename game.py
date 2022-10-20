@@ -28,7 +28,7 @@ class Game:
         # game is over
         p1seeds = self.gb.get_p1pits()
         p2seeds = self.gb.get_p2pits()
-        if p1seeds[6] > p2seeds[0]:
+        if p1seeds[0] > p2seeds[6]:
             print("Player 1 wins!")
         else:
             print("Player 2 wins!")
