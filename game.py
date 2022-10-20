@@ -13,6 +13,7 @@ class Game:
         print(self.g1.__str__())
         print(self.p1.__str__())
 
+    # Gillespie update
     def play(self):
         pit = self.p1.move()
         self.gb.move_seeds(pit,True)
