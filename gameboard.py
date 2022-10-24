@@ -25,14 +25,14 @@ class Gameboard:
             pit_num = pit - 1
             self.p1pits[pit] = 0  # sets # of seeds in pit that the user selected to zero
             p2pit_num = 0  # variable for when we have to place seeds in p2pits
-            for x in seeds:
-                if pit_num < -7:
+            for x in range(seeds):  # number of times the loop runs = # of seeds in pit
+                if pit_num < -7:  # if statement causes the seeds to loop around to p2pits if needed
                     self.p2pits[p2pit_num] += 1
                     p2pit_num += 1
-                    if p2pit_num > 5:
+                    if p2pit_num > 5:  # if it needs to loop again back to p1pits
                         pit_num = -1
                 else:
-                    self.p1pits[pit_num] += 1
+                    self.p1pits[pit_num] += 1  # if it stays on p1pits' side, keep sewing the seeds on the correct side
                     pit_num -= 1
 
 
