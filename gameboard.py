@@ -5,7 +5,7 @@ class Gameboard:
         # instance variables
         # initializes p1 and p2's side with 4 seeds in each pit
         # last element of p1 = their mancala, first element of p2 = their mancala
-        self.p1pits = [0, 4, 4, 4, 4, 4,4]
+        self.p1pits = [0, 4, 4, 4, 4, 4, 4]
         self.p2pits = [4, 4, 4, 4, 4, 4, 0]
         self.board = [self.p1pits, self.p2pits]
 
@@ -26,11 +26,15 @@ class Gameboard:
             self.p1pits[pit] = 0  # sets # of seeds in pit that the user selected to zero
             p2pit_num = 0  # variable for when we have to place seeds in p2pits
             for x in seeds:
-                if pit_num < 0:
+                if pit_num < -7:
                     self.p2pits[p2pit_num] += 1
                     p2pit_num += 1
-                self.p1pits[pit_num] += 1
-                pit_num -= 1
+                    if p2pit_num > 5:
+                        pit_num = -1
+                else:
+                    self.p1pits[pit_num] += 1
+                    pit_num -= 1
+
 
         else:  # if it is p2's turn
 
