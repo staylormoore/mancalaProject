@@ -1,5 +1,4 @@
 # Gameboard Class
-from game import Game
 class Gameboard:
     def __init__(self):
         # instance variables

@@ -1,7 +1,5 @@
 # Human Subclass
 from player import Player
-from gameboard import Gameboard
-from game import Game
 
 
 class Human(Player):

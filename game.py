@@ -10,11 +10,11 @@ class Game:
         self.p2 = Human("Player2")  # player2
         self.turn = True  # when turn = True, it is p1's turn, when turn = False, it is p2's turn
 
-        print(self.g1.__str__())  # testing, can delete later
+        print(self.gb.__str__())  # testing, can delete later
         print(self.p1.__str__())  # testing, can delete later
 
     def play(self):  # method that the client calls to play the game
-        while not Gameboard.game_over():  # while the game is still going
+        while not self.gb.game_over():  # while the game is still going
             if self.turn:  # p1 move
                 print("Player 1's turn")
                 pit = self.p1.move()
