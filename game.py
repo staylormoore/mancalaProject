@@ -19,6 +19,7 @@ class Game:
                 print("Player 1's turn")
                 pit = self.p1.move()
                 repeat = self.gb.move_seeds(pit, 1)
+                print(self.gb.__str__())
                 if not repeat:
                     self.turn = False
             else:  # p2 move

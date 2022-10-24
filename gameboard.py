@@ -22,7 +22,7 @@ class Gameboard:
         if player_turn == 1:  # if it is p1's turn
             seeds = self.p1pits[-pit]
             pit_num = pit - 1
-            self.p1pits[pit] = 0  # sets # of seeds in pit that the user selected to zero
+            self.p1pits[-pit] = 0  # sets # of seeds in pit that the user selected to zero
             p2pit_num = 0  # variable for when we have to place seeds in p2pits
             for x in range(seeds):  # number of times the loop runs = # of seeds in pit
                 if pit_num < -7:  # if statement causes the seeds to loop around to p2pits if needed

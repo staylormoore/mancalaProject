@@ -11,6 +11,5 @@ class Human(Player):
         return str(self.name)
 
     def move(self):
-        pit = input("Select a pit (1-6):")
+        pit = int(input("Select a pit (1-6):"))
         return pit
-
