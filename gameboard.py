@@ -37,9 +37,8 @@ class Gameboard:
                 if x == seeds - 1 and pit_num == -8:
                        return True
             return False
-
-
         else:  # if it is p2's turn
+            pass
 
 
 
