@@ -18,9 +18,9 @@ class Gameboard:
     def __str__(self):  # to-string for the board
         return str(self.board)
 
-    def move_seeds(self, pit, turn):  # method that determines how the seeds are sewn based on the player and
+    def move_seeds(self, pit, player_turn):  # method that determines how the seeds are sewn based on the player and
         # which pit they choose
-        if turn == 1:  # if it is p1's turn
+        if player_turn == 1:  # if it is p1's turn
             seeds = self.p1pits[-pit]
             pit_num = pit - 1
             self.p1pits[pit] = 0  # sets # of seeds in pit that the user selected to zero
@@ -34,6 +34,9 @@ class Gameboard:
                 else:
                     self.p1pits[pit_num] += 1  # if it stays on p1pits' side, keep sewing the seeds on the correct side
                     pit_num -= 1
+                if x == seeds - 1 and pit_num == -8:
+                       return True
+            return False
 
 
         else:  # if it is p2's turn
