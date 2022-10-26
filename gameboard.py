@@ -1,5 +1,5 @@
 # Gameboard Class
-class Gameboard:  # hi
+class Gameboard:
     def __init__(self):
         # instance variables
         # initializes p1 and p2's side with 4 seeds in each pit
@@ -14,7 +14,7 @@ class Gameboard:  # hi
     def get_p2pits(self):  # accessor method for p2pits --> enables to be used in other classes
         return self.p2pits
 
-    def __str__(self):  # to-string for the board, prints p1pits and p2pits on seperate lines
+    def __str__(self):  # to-string for the board, prints p1pits and p2pits on separate lines
         print(self.p1pits)
         print(self.p2pits)
         return ""
