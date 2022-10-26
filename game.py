@@ -30,9 +30,15 @@ class Game:
 
     def determine_winner(self):  # determines which player wins by counting up the seeds in each pit once the
         # game is over
-        p1seeds = self.gb.get_p1pits()
-        p2seeds = self.gb.get_p2pits()
-        if p1seeds[0] > p2seeds[6]:
+        p1pits_dup = self.gb.get_p1pits()  # duplicate lists for p1pits and p2pits by using the accessor method
+        p2pits_dup = self.gb.get_p2pits()
+        p1seeds = 0
+        p2seeds = 0
+        for x in p1pits_dup:  # iterates through p1pits, getting the # of seeds that may be leftover
+            p1seeds += p1pits_dup[x]
+        for x in p2pits_dup:  # iterates through p2pits, getting the # of seeds that may be leftover
+            p2seeds += p2pits_dup[x]
+        if p1seeds > p2seeds:  # if p1 has more seeds, they win, else, p2 wins
             print("Player 1 wins!")
         else:
             print("Player 2 wins!")
