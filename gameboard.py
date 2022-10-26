@@ -72,7 +72,7 @@ class Gameboard:
         for x in range(-1, -7, -1):  # this for loop checks each pit on player1's side for seeds
             if self.p1pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
                 over = False
-        for x in range(7):  # this for loop checks each pit on player2's side for seeds
-            if self.p2pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
-                over = False
+            for y in range(7):  # this for loop checks each pit on player2's side for seeds
+                if self.p2pits[y] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
+                    over = False
         return over
