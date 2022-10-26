@@ -26,7 +26,7 @@ class Game:
                 print("Player 2's turn")
                 pit = self.p2.move()
                 repeat = self.gb.move_seeds(pit, 2)
-                if not repeat :
+                if not repeat:
                     self.turn = True
     def determine_winner(self):  # determines which player wins by counting up the seeds in each pit once the
         # game is over

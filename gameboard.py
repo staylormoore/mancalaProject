@@ -30,17 +30,17 @@ class Gameboard:  # hi
                     p2pit_num += 1
                     if p2pit_num > 5:  # if it needs to loop again back to p1pits
                         pit_num = -1
+                        p2pit_num = 0
                 else:
                     self.p1pits[pit_num] += 1  # if it stays on p1pits' side, keep sewing the seeds on the correct side
                     pit_num -= 1
-                if x == seeds - 1 and pit_num == -8:
-                       return True
+                print("pit num = ", pit_num)
+                print("p2 pit num = ", p2pit_num)
+                if x == seeds - 1 and pit_num == -8 and p2pit_num == 0:
+                    return True
             return False
         else:  # if it is p2's turn
             pass
-
-
-
 
     def game_over(self):
         over = True
