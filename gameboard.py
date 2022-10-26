@@ -41,14 +41,38 @@ class Gameboard:
                     return True
             return False
         else:  # if it is p2's turn
-            pass
+            seeds = self.p2pits[pit-1]
+            pit_num = pit
+            self.p2pits[pit-1] = 0  # sets # of seeds in pit that the user selected to zero
+            p1pit_num = -1  # variable for when we have to place seeds in p1pits
+            for x in range(seeds):  # number of times the loop runs = # of seeds in pit
+                if pit_num > 6:  # if statement causes the seeds to loop around to p1pits if needed
+                    self.p1pits[p1pit_num] += 1
+                    p1pit_num -= 1
+                    if p1pit_num < -6:  # if it needs to loop again back to p2pits
+                        pit_num = 0
+                        p1pit_num = -1
+                else:
+                    self.p2pits[pit_num] += 1  # if it stays on p2pits' side, keep sewing the seeds on the correct side
+                    pit_num += 1
+                if x == seeds - 1 and pit_num == 7 and p1pit_num == -1:  # if the last seed was placed in the mancala,
+                    # repeat the player's turn
+                    return True
+            return False
 
     def game_over(self):
         over = True
-        for x in self.p1pits[0:6]:  # this for loop checks each pit on player1's side for seeds
+        # check to see if a board is full of zeros.
+        # if either side is full of zeros return trure
+
+
+        # in determine_winner():
+        #traverse both, and add each sides pockets to the mancala
+        # then compare mancalas
+        for x in range(-1, -7, -1):  # this for loop checks each pit on player1's side for seeds
             if self.p1pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
                 over = False
-        for x in self.p2pits[-1:-7]:  # this for loop checks each pit on player2's side for seeds
+        for x in range(7):  # this for loop checks each pit on player2's side for seeds
             if self.p2pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
                 over = False
         return over
