@@ -36,8 +36,6 @@ class Gameboard:  # hi
                 else:
                     self.p1pits[pit_num] += 1  # if it stays on p1pits' side, keep sewing the seeds on the correct side
                     pit_num -= 1
-                print("pit num = ", pit_num)
-                print("p2 pit num = ", p2pit_num)
                 if x == seeds - 1 and pit_num == -8 and p2pit_num == 0:
                     return True
             return False
