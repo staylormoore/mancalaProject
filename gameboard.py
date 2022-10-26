@@ -1,5 +1,5 @@
 # Gameboard Class
-class Gameboard:
+class Gameboard:  # hi
     def __init__(self):
         # instance variables
         # initializes p1 and p2's side with 4 seeds in each pit
