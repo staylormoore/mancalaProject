@@ -27,6 +27,7 @@ class Game:
                 print(self.gb.__str__())
                 if not repeat:  # if p2's last seed doesn't go into their mancala, it is p1's turn
                     self.turn = True
+        self.determine_winner()
 
     def determine_winner(self):  # determines which player wins by counting up the seeds in each pit once the
         # game is over
