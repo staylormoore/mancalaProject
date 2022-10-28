@@ -69,6 +69,6 @@ class Gameboard:
             p1_sum += self.p1pits[x]
         for y in range(7):  # this for loop checks each pit on player2's side for seeds
             p2_sum += self.p2pits[x]
-        if p1_sum > 0 or p2_sum > 0:
+        if p1_sum > 0 and p2_sum > 0:
             return False
         return True
