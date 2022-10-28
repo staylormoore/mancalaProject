@@ -63,10 +63,12 @@ class Gameboard:
     def game_over(self):
         # check to see if a board is full of zeros.
         # if either side is full of zeros return true
+        p1_sum = 0
+        p2_sum = 0
         for x in range(-1, -7, -1):  # this for loop checks each pit on player1's side for seeds
-            if self.p1pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
-                return False
+            p1_sum += self.p1pits[x]
         for y in range(7):  # this for loop checks each pit on player2's side for seeds
-            if self.p2pits[y] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
-                return False
+            p2_sum += self.p2pits[x]
+        if p1_sum > 0 or p2_sum > 0:
+            return False
         return True
