@@ -65,10 +65,6 @@ class Gameboard:
         # check to see if a board is full of zeros.
         # if either side is full of zeros return trure
 
-
-        # in determine_winner():
-        #traverse both, and add each sides pockets to the mancala
-        # then compare mancalas
         for x in range(-1, -7, -1):  # this for loop checks each pit on player1's side for seeds
             if self.p1pits[x] > 0:  # if the pit has a seed in it, over is false which means the game is not finished
                 over = False
