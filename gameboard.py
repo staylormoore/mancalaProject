@@ -16,7 +16,7 @@ class Gameboard:
 
     def __str__(self):  # to-string for the board, prints p1pits and p2pits on separate lines
         print(self.p1pits)
-        print(self.p2pits)
+        print("  ", self.p2pits)
         return ""
 
     def move_seeds(self, pit, player_turn):  # method that determines how the seeds are sewn based on the player and
