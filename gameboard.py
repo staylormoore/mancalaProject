@@ -39,6 +39,7 @@ class Gameboard:
                 if x == seeds - 1 and pit_num > -8 and self.p1pits[pit_num + 1] == 1:  # if the last seed is placed in
                     # one of the pits on p1's side, run the capture_series() method for that pit
                     self.capture_series(1, pit_num + 1)
+
                 if x == seeds - 1 and pit_num == -8 and p2pit_num == 0:  # if the last seed was placed in the mancala,
                     # repeat the player's turn
                     return True
