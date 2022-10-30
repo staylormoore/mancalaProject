@@ -76,10 +76,21 @@ class Gameboard:
             captured_seeds = self.p2pits[captured_pit]
             self.p2pits[captured_pit] = 0
             self.p1pits[0] += captured_seeds
+            captured_seeds = 0
+            for x in range(6):
+                if self.p2pits[x] == 2:
+                    captured_seeds += self.p2pits[x]
+                    self.p2pits[x] = 0
+            self.p1pits[0] += captured_seeds
         else:  # capture for p2
             captured_pit = (pit + 1) - 7
             captured_seeds = self.p1pits[captured_pit]
             self.p1pits[captured_pit] = 0
+            self.p2pits[6] += captured_seeds
+            for x in range(-1, -7, -1):
+                if self.p1pits[x] == 2:
+                    captured_seeds += self.p1pits[x]
+                    self.p1pits[x] = 0
             self.p2pits[6] += captured_seeds
 
     def game_over(self):  # method checks to see if one of the rows of pits is all zeros, ending the game if it is
