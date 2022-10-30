@@ -39,9 +39,9 @@ class Game:
             p1seeds += p1pits_dup[x]
         for x in range(6):  # iterates through p2pits, getting the # of seeds that may be leftover
             p2seeds += p2pits_dup[x]
-        if p1seeds > p2seeds:  # if p1 has more seeds
-            print("Player 1 wins!")
-        elif p1seeds == p2seeds:
+        if p1seeds == p2seeds:
             print("Draw!")  # if p1's seeds equals p2's seeds, it is a draw
+        elif p1seeds > p2seeds:  # if p1 has more seeds
+            print("Player 1 wins!")
         else:
             print("Player 2 wins!")  # else, p2 wins
