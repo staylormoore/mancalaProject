@@ -72,10 +72,9 @@ class Gameboard:
         # modification: any pits with two seeds on the opponent's side are also captured
         if player_turn == 1:  # capture for p1
             captured_pit = pit + 6
-            captured_seeds = self.p1pits[captured_pit]
-            self.p1pits[captured_pit] = 0
-            self.p2pits[0] += captured_seeds
-            pass
+            captured_seeds = self.p2pits[captured_pit]
+            self.p2pits[captured_pit] = 0
+            self.p1pits[0] += captured_seeds
         else:  # capture for p2
             captured_pit = (pit + 1) - 7
             captured_seeds = self.p1pits[captured_pit]
