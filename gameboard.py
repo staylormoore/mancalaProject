@@ -87,6 +87,7 @@ class Gameboard:
             captured_seeds = self.p1pits[captured_pit]
             self.p1pits[captured_pit] = 0
             self.p2pits[6] += captured_seeds
+            captured_seeds = 0
             for x in range(-1, -7, -1):
                 if self.p1pits[x] == 2:
                     captured_seeds += self.p1pits[x]
