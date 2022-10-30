@@ -72,7 +72,10 @@ class Gameboard:
         if player_turn == 1:
             pass
         else:
-
+            captured_pit = (pit + 1) - 7
+            captured_seeds = self.p1pits[captured_pit]
+            self.p1pits[captured_pit] = 0
+            self.p2pits[6] += captured_seeds
 
     def game_over(self):  # method checks to see if one of the rows of pits is all zeros, ending the game if it is
         p1_sum = 0
