@@ -60,6 +60,12 @@ class Gameboard:
                     return True
             return False
 
+    def capture_series(self):  # method runs if the player's last seed is placed in an empty pit on their side and
+        # loops through to the opponent's side and captures the seed across, leaving the capturing seed that was
+        # placed on their side
+        # modification: any pits with two seeds on the opponent's side are also captured
+        pass
+
     def game_over(self):  # method checks to see if one of the rows of pits is all zeros, ending the game if it is
         p1_sum = 0
         p2_sum = 0
