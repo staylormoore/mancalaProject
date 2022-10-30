@@ -10,6 +10,6 @@ class Human(Player):
     def __str__(self):  # to-string method for names
         return str(self.name)
 
-    def move(self):
+    def move(self):  # returns the number that the user inputs as their seleted pit
         pit = int(input("Select a pit (1-6):"))
         return pit
