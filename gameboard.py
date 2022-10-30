@@ -36,8 +36,8 @@ class Gameboard:
                 else:
                     self.p1pits[pit_num] += 1  # if it stays on p1pits' side, keep sewing the seeds on the correct side
                     pit_num -= 1
-                if x == seeds - 1 and pit_num > -8 and self.p1pits[pit_num + 1] == 1:  # if the last seed was placed in
-                    # an empty pit on your own side, do the capture series
+                if x == seeds - 1 and pit_num > -8 and self.p1pits[pit_num + 1] == 1:  # if the last seed is placed in
+                    # one of the pits on p1's side, run the capture_series() method for that pit
                     self.capture_series(1, pit_num + 1)
                 if x == seeds - 1 and pit_num == -8 and p2pit_num == 0:  # if the last seed was placed in the mancala,
                     # repeat the player's turn
@@ -58,20 +58,25 @@ class Gameboard:
                 else:
                     self.p2pits[pit_num] += 1  # if it stays on p2pits' side, keep sewing the seeds on the correct side
                     pit_num += 1
-                if x == seeds - 1 and pit_num < 7 and self.p2pits[pit_num - 1] == 1:
+                if x == seeds - 1 and pit_num < 7 and self.p2pits[pit_num - 1] == 1:  # if the last seed is placed in
+                    # one of the pits on p2's side, run the capture_series() method for that pit
                     self.capture_series(2, pit_num - 1)
                 if x == seeds - 1 and pit_num == 7 and p1pit_num == -1:  # if the last seed was placed in the mancala,
                     # repeat the player's turn
                     return True
             return False
 
-    def capture_series(self, player_turn, pit):  # method runs if the player's last seed is placed in an empty pit on their side and
-        # loops through to the opponent's side and captures the seed across, leaving the capturing seed that was
-        # placed on their side
+    def capture_series(self, player_turn, pit):  # method runs if the player's last seed is placed in an empty pit
+        # on their side and loops through to the opponent's side and captures the seed across, leaving the capturing
+        # seed that was placed on their side
         # modification: any pits with two seeds on the opponent's side are also captured
-        if player_turn == 1:
+        if player_turn == 1:  # capture for p1
+            captured_pit = pit + 6
+            captured_seeds = self.p1pits[captured_pit]
+            self.p1pits[captured_pit] = 0
+            self.p2pits[0] += captured_seeds
             pass
-        else:
+        else:  # capture for p2
             captured_pit = (pit + 1) - 7
             captured_seeds = self.p1pits[captured_pit]
             self.p1pits[captured_pit] = 0
