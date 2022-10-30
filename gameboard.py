@@ -36,6 +36,8 @@ class Gameboard:
                 else:
                     self.p1pits[pit_num] += 1  # if it stays on p1pits' side, keep sewing the seeds on the correct side
                     pit_num -= 1
+                if x == seeds - 1 and pit_num > -8 and self.p1pits[pit_num + 1] == 1:
+                    pass
                 if x == seeds - 1 and pit_num == -8 and p2pit_num == 0:  # if the last seed was placed in the mancala,
                     # repeat the player's turn
                     return True
