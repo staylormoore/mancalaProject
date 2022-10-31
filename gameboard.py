@@ -70,15 +70,14 @@ class Gameboard:
     def capture_series(self, player_turn, pit):  # method runs if the player's last seed is placed in an empty pit
         # on their side and loops through to the opponent's side and captures the seed across, leaving the capturing
         # seed that was placed on their side
-        # modification: any pits with two seeds on the opponent's side are also captured
         if player_turn == 1:  # capture for p1
             captured_pit = pit + 6
             captured_seeds = self.p2pits[captured_pit]
             self.p2pits[captured_pit] = 0
             self.p1pits[0] += captured_seeds
             captured_seeds = 0
-            for x in range(6):
-                if self.p2pits[x] == 2:
+            for x in range(6):  # modification: any pits with two seeds on the opponent's side are also captured
+                if self.p2pits[x] == 2:  # if the index of the pit is equal to 2, capture it
                     captured_seeds += self.p2pits[x]
                     self.p2pits[x] = 0
             self.p1pits[0] += captured_seeds
@@ -88,8 +87,8 @@ class Gameboard:
             self.p1pits[captured_pit] = 0
             self.p2pits[6] += captured_seeds
             captured_seeds = 0
-            for x in range(-1, -7, -1):
-                if self.p1pits[x] == 2:
+            for x in range(-1, -7, -1):  # modification:any pits with two seeds on the opponent's side are also captured
+                if self.p1pits[x] == 2:  # if the index of the pit is equal to 2, capture it
                     captured_seeds += self.p1pits[x]
                     self.p1pits[x] = 0
             self.p2pits[6] += captured_seeds
