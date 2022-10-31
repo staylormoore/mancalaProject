@@ -35,9 +35,9 @@ class Game:
         p2pits_dup = self.gb.get_p2pits()
         p1seeds = 0
         p2seeds = 0
-        for x in range(-1, -7, -1):  # iterates through p1pits, getting the # of seeds that may be leftover
+        for x in range(-1, -8, -1):  # iterates through p1pits, getting the # of seeds that may be leftover
             p1seeds += p1pits_dup[x]
-        for x in range(6):  # iterates through p2pits, getting the # of seeds that may be leftover
+        for x in range(7):  # iterates through p2pits, getting the # of seeds that may be leftover
             p2seeds += p2pits_dup[x]
         print("Player 1 gets ", p1seeds, "seeds and Player 2 gets ", p2seeds, "seeds")
         if p1seeds > p2seeds:
